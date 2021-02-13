@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\newcommand{\R}{{\mathcal R}}
+\newcommand{\F}{{\mathcal F}}
+\newcommand{\V}{{\mathcal V}}
+\usepackage{lineno}\renewcommand\thelinenumber{\color{gray}\arabic{linenumber}}
+
+%%\parskip=10pt
+
+\begin{document}
+
+\linenumbers
+
+\title{Mathematics 4MB3 Assignment 2}
+\author{Jason Pekos, Zachary Levine}
+\date{\today}
+\maketitle
+
+\section*{Question One}
+
+\subsection*{Part a}
+Let the total infectious period be the time between when an individual enters $I_1$ and leaves $I_n$. Assume that at time $t = 0$, we have $I_{1_0}$ infectives in the first serially linked infectious compartment, $I_1$. Then, if we prevent contact with any susceptible individuals, the differential equation for $I_1$ becomes
+\begin{linenomath}
+\begin{align*}
+\frac{dI}{dt} &= n \gamma I_1
+\end{align*}
+\end{linenomath}
+
+If we solve this differential equation using separation of variables, we obtain
+\begin{linenomath}
+\begin{align*}
+I_1(t) = I_{1_0} e ^{-n\gamma t}
+\end{align*}
+\end{linenomath}
+
+If at time $t$, $I_1(t) = I_{1_0} e^{-n\gamma t}$ individuals are in $I_1$, then after time $t$, the proportion of individuals in $I_1$ is reduced by a factor of $e^{-n\gamma t}$, so that the proportion of individuals who have an infectious period shorter than $t$ is $1-e^{-n\gamma t}$. Since this is the cumulative density function of the time an individual spends in $I_1$, the probability density function is the derivative of this function, or $n\gamma e^{-n\gamma t}$. The mean of this distribution is.
+
+\begin{linenomath}
+\begin{align*}
+\int_{0}^{\infty} t n\gamma e^{-n\gamma t} dt = \frac{1}{\gamma n}
+ \end{align*}
+\end{linenomath}
+
+So the mean time spent in $I_1$ is $\frac{1}{\gamma n}$ Since the removal rate for every infective compartment is the same, the average person should spend the same amount of time in each compartment. Thus, the total infectious period is $n \frac{1}{\gamma n} = \frac{1}{\gamma}$, which is unchanged from the standard SIR model with one infectious compartment.
+
+\subsection*{Part b}
+
+$\R_0$ captures the speed of infectious disease spread, which the linear chain trick does not change, when applied to a model. By expanding $I$ into $n$ sub compartments, but forcing people to move between the compartments at $n$ times the normal rate, the extra compartments do not change the speed of disease spread in the model. In addition, since the sum of the infectious compartments $\sum_1^n{I_i}$ is the same as $I$ in the standard SIR model, the rate of new infections is identical in both models, which means $\R_0$ should be too.
+
+\end{document}
+
