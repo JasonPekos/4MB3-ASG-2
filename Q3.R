@@ -68,3 +68,14 @@ legend("topright",
        col = 1:2,
        legend=c("Predicted deaths", "Reported deaths"),
        lwd=1)
+
+##Q1c)
+x <- numeric(1000)
+for (i in 1:length(x)){
+  x[i] <- sum(rexp(rate = 1, 4))
+}
+
+
+hist(x, freq =  FALSE)
+lines(dgamma(1:10, shape = 4, rate = 1))
+
