@@ -33,11 +33,12 @@ If at time $t$, $I_1(t) = I_{1_0} e^{-n\gamma t}$ individuals are in $I_1$, then
 \int_{0}^{\infty} t n\gamma e^{-n\gamma t} dt = \frac{1}{\gamma n}
   \]
  
+ So the mean time spent in $I_1$ is $\frac{1}{\gamma n}$ Since the removal rate for every infective compartment is the same, the average person should spend the same amount of time in each compartment. Thus, the total infectious period is $n \frac{1}{\gamma n} = \frac{1}{\gamma}$, which is unchanged from the standard SIR model with one infectious compartment.
 
 
 **Part B)**
 
-So the mean time spent in $I_1$ is $\frac{1}{\gamma n}$ Since the removal rate for every infective compartment is the same, the average person should spend the same amount of time in each compartment. Thus, the total infectious period is $n \frac{1}{\gamma n} = \frac{1}{\gamma}$, which is unchanged from the standard SIR model with one infectious compartment.
+$\R_0$ captures the speed of infectious disease spread, which the linear chain trick does not change, when applied to a model. By expanding $I$ into $n$ sub compartments, but forcing people to move between the compartments at $n$ times the normal rate, the extra compartments do not change the speed of disease spread in the model. In addition, since the sum of the infectious compartments $\sum_1^n{I_i}$ is the same as $I$ in the standard SIR model, the rate of new infections is identical in both models, which means $\R_0$ should be too.
 
 
 **Part C)**
@@ -58,7 +59,7 @@ lines(dgamma(1:10, shape = 4, rate = 1))
 
 # Question Two
 
-**Par A)**
+**Part A)**
 
 *Reproduce Figure 2 from Shaw and Kennedy (2021) by coding the ODEs in R or Python and integrating them numerically. You don’t need to get the colours exactly right.*
 
